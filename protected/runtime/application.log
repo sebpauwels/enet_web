@@ -1,0 +1,45 @@
+2012/09/17 18:05:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "gii".' in C:\wamp\www\yii\framework\web\CController.php:484
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\CController.php(271): CController->missingAction('gii')
+#1 C:\wamp\www\yii\framework\web\CWebApplication.php(283): CController->run('gii')
+#2 C:\wamp\www\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('site/gii')
+#3 C:\wamp\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\wamp\www\enet_web\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/enet_web/index.php/site/gii
+---
+2012/09/17 18:06:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "gii".' in C:\wamp\www\yii\framework\web\CController.php:484
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\CController.php(271): CController->missingAction('gii')
+#1 C:\wamp\www\yii\framework\web\CWebApplication.php(283): CController->run('gii')
+#2 C:\wamp\www\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('site/gii')
+#3 C:\wamp\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\wamp\www\enet_web\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/enet_web/index.php/site/gii/
+---
+2012/09/17 20:21:35 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`enet_db`.`enet_classe`, CONSTRAINT `enet_classe_ibfk_1` FOREIGN KEY (`etablissementid`) REFERENCES `enet_etablissement` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: INSERT INTO `enet_classe` (`nom_classe`, `etablissementId`, `bool_groupe`) VALUES (:yp0, :yp1, :yp2).
+in C:\wamp\www\enet_web\protected\controllers\ClasseController.php (73)
+in C:\wamp\www\enet_web\index.php (13)
+2012/09/17 20:21:35 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`enet_db`.`enet_classe`, CONSTRAINT `enet_classe_ibfk_1` FOREIGN KEY (`etablissementid`) REFERENCES `enet_etablissement` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: INSERT INTO `enet_classe` (`nom_classe`, `etablissementId`, `bool_groupe`) VALUES (:yp0, :yp1, :yp2)' in C:\wamp\www\yii\framework\db\CDbCommand.php:354
+Stack trace:
+#0 C:\wamp\www\yii\framework\db\ar\CActiveRecord.php(1017): CDbCommand->execute()
+#1 C:\wamp\www\yii\framework\db\ar\CActiveRecord.php(796): CActiveRecord->insert(NULL)
+#2 C:\wamp\www\enet_web\protected\controllers\ClasseController.php(73): CActiveRecord->save()
+#3 C:\wamp\www\yii\framework\web\actions\CInlineAction.php(50): ClasseController->actionCreate()
+#4 C:\wamp\www\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#5 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 C:\wamp\www\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#7 C:\wamp\www\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#8 C:\wamp\www\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\wamp\www\yii\framework\web\CController.php(292): CFilterChain->run()
+#11 C:\wamp\www\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\wamp\www\yii\framework\web\CWebApplication.php(283): CController->run('create')
+#13 C:\wamp\www\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('classe/create')
+#14 C:\wamp\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#15 C:\wamp\www\enet_web\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/enet_web/index.php/classe/create
+HTTP_REFERER=http://127.0.0.1/enet_web/index.php/classe/create
+---

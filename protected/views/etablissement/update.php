@@ -3,19 +3,19 @@
 /* @var $model Etablissement */
 
 $this->breadcrumbs=array(
-	'Etablissements'=>array('index'),
-	$model->id=>array('view','id'=>$model->id),
-	'Update',
+	'Établissements'=>array('index'),
+	$model->nom_etablissement=>array('view','id'=>$model->id),
+	'Mettre à jour',
 );
 
 $this->menu=array(
-	array('label'=>'List Etablissement', 'url'=>array('index')),
-	array('label'=>'Create Etablissement', 'url'=>array('create')),
-	array('label'=>'View Etablissement', 'url'=>array('view', 'id'=>$model->id)),
-	array('label'=>'Manage Etablissement', 'url'=>array('admin')),
+	array('label'=>'Vos établissements', 'url'=>array('index')),
+	array('label'=>'Ajouter un établissement', 'url'=>array('create')),
+	//array('label'=>'View Etablissement', 'url'=>array('view', 'id'=>$model->id)),
+	array('label'=>'Gérer vos établissements', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Update Etablissement <?php echo $model->id; ?></h1>
+<h1>Mise à jour de : <?php echo $model->nom_etablissement; ?></h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

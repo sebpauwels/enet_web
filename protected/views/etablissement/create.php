@@ -3,16 +3,16 @@
 /* @var $model Etablissement */
 
 $this->breadcrumbs=array(
-	'Etablissements'=>array('index'),
-	'Create',
+	'Établissements'=>array('index'),
+	'Créer',
 );
 
 $this->menu=array(
-	array('label'=>'List Etablissement', 'url'=>array('index')),
-	array('label'=>'Manage Etablissement', 'url'=>array('admin')),
+	array('label'=>'Vos établissements', 'url'=>array('index')),
+	array('label'=>'Gérer vos établissements', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Create Etablissement</h1>
+<h1>Ajouter un établissement</h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

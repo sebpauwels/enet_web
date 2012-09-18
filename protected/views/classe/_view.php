@@ -14,7 +14,7 @@
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('etablissementId')); ?>:</b>
-	<?php echo CHtml::encode($data->etablissementId); ?>
+	<?php echo CHtml::encode(Etablissement::model()->find('id='.$data->etablissementId)->nom_etablissement); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('bool_groupe')); ?>:</b>

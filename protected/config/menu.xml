@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<items>
+  <item>
+     <label>login</label>
+     <url>array('site/login');</url>
+     <visible>Yii::app()->user->isGuest;</visible>
+  </item>
+  <item>
+      <label>Contact</label>
+      <url>array('site/contact');</url>
+  </item>
+  <item>
+     <label>Logout</label>
+     <url>array('site/logout');</url>
+     <visible>!Yii::app()->user->isGuest;</visible>
+  </item>
+</items>

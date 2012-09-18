@@ -3,25 +3,23 @@
 /* @var $model Etablissement */
 
 $this->breadcrumbs=array(
-	'Etablissements'=>array('index'),
-	$model->id,
+	'Établissements'=>array('index'),
 );
 
 $this->menu=array(
-	array('label'=>'List Etablissement', 'url'=>array('index')),
-	array('label'=>'Create Etablissement', 'url'=>array('create')),
-	array('label'=>'Update Etablissement', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Delete Etablissement', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage Etablissement', 'url'=>array('admin')),
+	array('label'=>'Vos établissements', 'url'=>array('index')),
+	array('label'=>'Ajouter un établissement', 'url'=>array('create')),
+	array('label'=>'Modifier cet établissement', 'url'=>array('update', 'id'=>$model->id)),
+	array('label'=>'Supprimer cet établissement', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Voulez-vous supprimer cet établissement ?')),
+	array('label'=>'Gérer vos établissements', 'url'=>array('admin')),
 );
 ?>
 
-<h1>View Etablissement #<?php echo $model->id; ?></h1>
+<h1>Établissement <?php echo $model->nom_etablissement; ?></h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
-		'id',
 		'nom_etablissement',
 		'adresse_etablissement',
 		'tel_etablissement',

@@ -3,23 +3,24 @@
 /* @var $data Etablissement */
 ?>
 
-<div class="view">
+<div class="view viewEtablissement">
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('id')); ?>:</b>
-	<?php echo CHtml::link(CHtml::encode($data->id), array('view', 'id'=>$data->id)); ?>
-	<br />
+        <!--<b><?php echo CHtml::encode($data->getAttributeLabel('id')); ?>:</b>
+    <?php echo CHtml::link(CHtml::encode($data->id), array('view', 'id' => $data->id)); ?>
+        <br />-->
+    <b>
+        <?php echo CHtml::encode($data->nom_etablissement); ?>
+    </b>
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('nom_etablissement')); ?>:</b>
-	<?php echo CHtml::encode($data->nom_etablissement); ?>
-	<br />
+    <div class="infos-etab">
+    <p><?php echo nl2br(CHtml::encode($data->adresse_etablissement)); ?></p>
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('adresse_etablissement')); ?>:</b>
-	<?php echo CHtml::encode($data->adresse_etablissement); ?>
-	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('tel_etablissement')); ?>:</b>
-	<?php echo CHtml::encode($data->tel_etablissement); ?>
-	<br />
+    <b>Téléphone :</b>
+    <?php echo CHtml::encode($data->tel_etablissement); ?>
+    <br />
+    
+    </div>
 
 
 </div>

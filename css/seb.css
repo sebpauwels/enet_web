@@ -1,0 +1,72 @@
+/* 
+    Document   : seb
+    Created on : 18 sept. 2012, 17:54:19
+    Author     : Seb
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { 
+    display: block;
+}
+
+.form #etablissement-form {
+    
+    background: white url(school.png) no-repeat right top;
+    
+}
+
+.form textarea {
+    
+    width: 421px;
+    font-weight: bold;
+    color: #666666;
+}
+
+.form input[type=text] {
+    
+    width: 423px;
+    font-weight: bold;
+    color: #666666;
+    
+}
+
+
+
+.form .buttons input {
+    
+    cursor: pointer;
+    background: white url(bg_2.gif) repeat-x left top;
+    border: none;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    width: 100%;
+    margin: 0;
+    padding: 10px;
+    font-size: 16px;
+    color: #FFFFFF;
+    font-weight: bold;
+}
+
+.form .buttons input:hover {
+    
+    background: white url(bg_1.gif) repeat-x left top;
+    
+}
+.form {
+    
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 1px solid #C9C9C9;
+    
+}
+
+.infos-etab {
+    padding: 20px;
+}
+
+.viewEtablissement {
+    
+    background: #e8e8e9 url(school_min.png) no-repeat right top;
+    
+}

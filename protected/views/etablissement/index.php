@@ -3,12 +3,12 @@
 /* @var $dataProvider CActiveDataProvider */
 
 $this->breadcrumbs=array(
-	'Etablissements',
+	'Établissements',
 );
 
 $this->menu=array(
-	array('label'=>'Create Etablissement', 'url'=>array('create')),
-	array('label'=>'Manage Etablissement', 'url'=>array('admin')),
+	array('label'=>'Ajouter un établissement', 'url'=>array('create')),
+	array('label'=>'Gérer vos établissements', 'url'=>array('admin')),
 );
 ?>
 

@@ -61,12 +61,35 @@ root {
     
 }
 
-.infos-etab {
+.infos-etab-left {
     padding: 20px;
+    padding-right: 0;
+    width: 344px;
+    float: left;
 }
+
+.infos-etab-right {
+    padding-right: 20px;
+    padding-top: 70px;
+    padding-left: 0;
+    width: 240px;
+    float: right;
+}
+
+.clear { clear: both}
 
 .viewEtablissement {
     
     background: #e8e8e9 url(school_min.png) no-repeat right top;
     
+}
+
+.nbClasseEtab {
+    font-size : 12px;
+    font-weight : bold;
+    color:#7272B9;
+}
+
+.puce {
+    vertical-align: middle;
 }

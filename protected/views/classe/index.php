@@ -7,14 +7,20 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Create Classe', 'url'=>array('create')),
-	array('label'=>'Manage Classe', 'url'=>array('admin')),
+	array('label'=>'Ajouter une classe', 'url'=>array('create')),
+	array('label'=>'Gérer les classes', 'url'=>array('admin')),
 );
 ?>
 
 <h1>Classes</h1>
-
-<?php $this->widget('zii.widgets.CListView', array(
+<?php 
+//si l'id de l'établissement est renseigné en GET, on affiche seulement les classes ou groupes associés
+$etablissementId = Yii::app()->request->getQuery('etablissementId', null);
+if (!is_null($etablissementId))
+{
+    $dataProvider->model->dbCriteria->addCondition('etablissementId='.$etablissementId);
+}
+$this->widget('zii.widgets.CListView', array(
 	'dataProvider'=>$dataProvider,
 	'itemView'=>'_view',
 )); ?>

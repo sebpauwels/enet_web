@@ -59,6 +59,8 @@ return array(
 			'username' => 'root',
 			'password' => '',
 			'charset' => 'utf8',
+			'enableParamLogging'=>true,
+			'enableProfiling'=>true,
 		),
 		
 		'errorHandler'=>array(

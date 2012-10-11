@@ -69,9 +69,9 @@ class Etablissement extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'nom_etablissement' => 'Nom Etablissement',
-			'adresse_etablissement' => 'Adresse Etablissement',
-			'tel_etablissement' => 'Tel Etablissement',
+			'nom_etablissement' => 'Nom de l`\'établissement',
+			'adresse_etablissement' => 'Adresse de l\'établissement',
+			'tel_etablissement' => 'Téléphone de l\'établissement',
 		);
 	}
 

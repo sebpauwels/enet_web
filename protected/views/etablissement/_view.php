@@ -12,7 +12,9 @@
         <?php echo CHtml::encode($data->nom_etablissement); ?>
     </b>
 
-    <div class="infos-etab">
+    <div class="clear"></div>
+    
+    <div class="infos-etab-left">
     <p><?php echo nl2br(CHtml::encode($data->adresse_etablissement)); ?></p>
 
 
@@ -21,6 +23,12 @@
     <br />
     
     </div>
+    
+    <div class="infos-etab-right">
+        <p class="nbClasseEtab">il y a actuellement <?php echo CHtml::link(count(Classe::model()->findAll('etablissementId='.$data->id)),Yii::app()->request->baseUrl.'/index.php/classe/index/etablissementId/'.$data->id,array('class'=>'nbClasses')); ?> classe(s) renseignée(s) dans cet établissement</p>
+    </div>
+    
+    <div class="clear"></div>
 
 
 </div>

@@ -4,12 +4,12 @@
 
 $this->breadcrumbs=array(
 	'Classes'=>array('index'),
-	'Manage',
+	'Gérer',
 );
 
 $this->menu=array(
-	array('label'=>'List Classe', 'url'=>array('index')),
-	array('label'=>'Create Classe', 'url'=>array('create')),
+	array('label'=>'Liste des classes', 'url'=>array('index')),
+	array('label'=>'Ajouter une classe', 'url'=>array('create')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -26,26 +26,18 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Manage Classes</h1>
+<h1>Gérer les classes</h1>
 
-<p>
-You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
-or <b>=</b>) at the beginning of each of your search values to specify how the comparison should be done.
-</p>
-
-<?php echo CHtml::link('Advanced Search','#',array('class'=>'search-button')); ?>
 <div class="search-form" style="display:none">
 <?php $this->renderPartial('_search',array(
 	'model'=>$model,
 )); ?>
 </div><!-- search-form -->
-
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'classe-grid',
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
 	'columns'=>array(
-		'id',
 		'nom_classe',
 		'etablissementId',
 		'bool_groupe',

@@ -40,13 +40,26 @@ class Classe extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('nom_classe, etablissementId, bool_groupe', 'required'),
+			array('nom_classe, etablissementId', 'required'),
 			array('etablissementId, bool_groupe', 'numerical', 'integerOnly'=>true),
 			array('nom_classe', 'length', 'max'=>255),
+			array('nom_classe', 'unique', 
+				  'criteria'=>array(
+            					'condition'=>'`t`.`etablissementId`=:etablissementId',
+				  				'params'=>array(
+                					':etablissementId'=>$this->getPost('etablissementId')
+            					)
+            					
+        		  )),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('id, nom_classe, etablissementId, bool_groupe', 'safe', 'on'=>'search'),
 		);
+	}
+	
+	private function getPost($name,$defaultValue=null)
+	{
+		return isset($_POST['Classe'][$name]) ? $_POST['Classe'][$name] : $defaultValue;
 	}
 
 	/**
@@ -68,9 +81,9 @@ class Classe extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'nom_classe' => 'Nom Classe',
-			'etablissementId' => 'Etablissement',
-			'bool_groupe' => 'Bool Groupe',
+			'nom_classe' => 'nom de la classe',
+			'etablissementId' => 'établissement',
+			'bool_groupe' => 'est un groupe',
 		);
 	}
 
@@ -94,4 +107,22 @@ class Classe extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+        
+        public function searchByEtablissementId($etablissementId)
+        {
+            $this->etablissementId = $etablissementId;
+            $criteria=new CDbCriteria;
+
+		$criteria->compare('id',$this->id);
+		$criteria->compare('nom_classe',$this->nom_classe,true);
+		$criteria->compare('etablissementId',$this->etablissementId);
+		$criteria->compare('bool_groupe',$this->bool_groupe);
+
+                $this->etablissementId = null;
+                
+		return new CActiveDataProvider($this, array(
+			'criteria'=>$criteria,
+		));
+                
+        }
 }

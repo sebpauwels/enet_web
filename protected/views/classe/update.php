@@ -4,15 +4,13 @@
 
 $this->breadcrumbs=array(
 	'Classes'=>array('index'),
-	$model->id=>array('view','id'=>$model->id),
-	'Update',
+	'Modifier',
 );
 
 $this->menu=array(
-	array('label'=>'List Classe', 'url'=>array('index')),
-	array('label'=>'Create Classe', 'url'=>array('create')),
-	array('label'=>'View Classe', 'url'=>array('view', 'id'=>$model->id)),
-	array('label'=>'Manage Classe', 'url'=>array('admin')),
+	array('label'=>'Liste des classes', 'url'=>array('index')),
+	array('label'=>'Ajouter une classe', 'url'=>array('create')),
+	array('label'=>'Gérer les classes', 'url'=>array('admin')),
 );
 ?>
 

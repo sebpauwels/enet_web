@@ -1,15 +1,14 @@
 <?php
-/* @var $this EtablissementController */
-/* @var $model Etablissement */
+/* @var $this EnseignantController */
+/* @var $model Enseignant */
 
 $this->breadcrumbs=array(
-	'Établissements'=>array('index'),
+	'Enseignants'=>array('index'),
 	'Liste',
 );
 
 $this->menu=array(
-	array('label'=>'Vos établissements', 'url'=>array('index')),
-	array('label'=>'Ajouter un établissement', 'url'=>array('create')),
+	array('label'=>'Ajouter un enseignant', 'url'=>array('create')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -18,7 +17,7 @@ $('.search-button').click(function(){
 	return false;
 });
 $('.search-form form').submit(function(){
-	$.fn.yiiGridView.update('etablissement-grid', {
+	$.fn.yiiGridView.update('enseignant-grid', {
 		data: $(this).serialize()
 	});
 	return false;
@@ -26,7 +25,7 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Liste des établissements</h1>
+<h1>Liste des enseignants</h1>
 
 <div class="search-form" style="display:none">
 <?php $this->renderPartial('_search',array(
@@ -35,14 +34,14 @@ $('.search-form form').submit(function(){
 </div><!-- search-form -->
 
 <?php $this->widget('zii.widgets.grid.CGridView', array(
-	'id'=>'etablissement-grid',
+	'id'=>'enseignant-grid',
 	'dataProvider'=>$model->search(),
+	'filter'=>$model,
 	'columns'=>array(
-		'nom_etablissement',
-		'adresse_etablissement',
-		'tel_etablissement',
+		'nom_enseignant',
 		array(
 			'class'=>'CButtonColumn',
+                        'template'=>'{delete}{update}'
 		),
 	),
 )); ?>

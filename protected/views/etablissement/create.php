@@ -9,7 +9,7 @@ $this->breadcrumbs=array(
 
 $this->menu=array(
 	array('label'=>'Vos établissements', 'url'=>array('index')),
-	array('label'=>'Gérer vos établissements', 'url'=>array('admin')),
+	array('label'=>'Gérer les établissements', 'url'=>array('admin')),
 );
 ?>
 

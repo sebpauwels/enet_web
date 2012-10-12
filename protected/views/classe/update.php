@@ -8,12 +8,11 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Liste des classes', 'url'=>array('index')),
 	array('label'=>'Ajouter une classe', 'url'=>array('create')),
-	array('label'=>'Gérer les classes', 'url'=>array('admin')),
+	array('label'=>'Liste des classes', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Update Classe <?php echo $model->id; ?></h1>
+<h1>Modifier la classe <?php echo $model->nom_classe; ?></h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

@@ -8,7 +8,7 @@ $this->breadcrumbs=array(
 
 $this->menu=array(
 	array('label'=>'Ajouter une classe', 'url'=>array('create')),
-	array('label'=>'Gérer les classes', 'url'=>array('admin')),
+	array('label'=>'Liste des classes', 'url'=>array('admin')),
 );
 ?>
 

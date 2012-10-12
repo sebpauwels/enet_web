@@ -81,8 +81,8 @@ class Classe extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'nom_classe' => 'nom de la classe',
-			'etablissementId' => 'établissement',
+			'nom_classe' => 'Nom de la classe',
+			'etablissementId' => 'Établissement',
 			'bool_groupe' => 'est un groupe',
 		);
 	}
@@ -102,7 +102,9 @@ class Classe extends CActiveRecord
 		$criteria->compare('nom_classe',$this->nom_classe,true);
 		$criteria->compare('etablissementId',$this->etablissementId);
 		$criteria->compare('bool_groupe',$this->bool_groupe);
-
+                $criteria->compare('enet_etablissement.id',$this->etablissementId);
+                
+                
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));

@@ -8,7 +8,7 @@ $this->breadcrumbs=array(
 
 $this->menu=array(
 	array('label'=>'Ajouter un établissement', 'url'=>array('create')),
-	array('label'=>'Gérer vos établissements', 'url'=>array('admin')),
+	array('label'=>'Gérer les établissements', 'url'=>array('admin')),
 );
 ?>
 

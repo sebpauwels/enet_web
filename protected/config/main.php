@@ -79,6 +79,12 @@ return array(
 				array(
 					'class'=>'CWebLogRoute',
 				),
+                            
+                                // show traces etc
+                                array(
+                                        'class'=>'CProfileLogRoute',
+                                        'levels'=>'trace,error,info,warning',
+                                ), 
 				
 			),
 		),

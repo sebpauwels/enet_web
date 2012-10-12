@@ -71,7 +71,7 @@ class ClasseController extends Controller
 		{
 			$model->attributes=$_POST['Classe'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+				$this->redirect(array('admin','id'=>$model->id));
 		}
 
 		$this->render('create',array(
@@ -95,7 +95,7 @@ class ClasseController extends Controller
 		{
 			$model->attributes=$_POST['Classe'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+				$this->redirect(array('admin','id'=>$model->id));
 		}
 
 		$this->render('update',array(
@@ -138,8 +138,11 @@ class ClasseController extends Controller
 		if(isset($_GET['Classe']))
 			$model->attributes=$_GET['Classe'];
 
+                $dataProvider=new CActiveDataProvider('Classe');
+                
 		$this->render('admin',array(
 			'model'=>$model,
+                        'dataProvider'=>$dataProvider
 		));
 	}
 

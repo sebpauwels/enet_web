@@ -17,13 +17,15 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model, 'nom_classe'); ?>
+                <label class="formExemple">ex: "6ème Schubert" / "4èmeC Allemand"</label>
 		<?php echo $form->textField($model, 'nom_classe',array('size'=>60,'maxlength'=>255)); ?>
 		<?php echo $form->error($model,'nom_classe'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'etablissementId'); ?>
-        <?php echo $form->dropDownList($model, 'etablissementId', CHtml::listData(Etablissement::model()->findAll(), 'id', 'nom_etablissement'))?>
+                <label class="formExemple">si l'établissement n'apparaît pas, créez le ici : <?php echo CHtml::link('lien',Yii::app()->request->baseUrl.'/index.php/etablissement/create');?></label>
+                <?php echo $form->dropDownList($model, 'etablissementId', CHtml::listData(Etablissement::model()->findAll(), 'id', 'nom_etablissement'))?>
 		<?php echo $form->error($model,'etablissementId'); ?>
 	</div>
 
@@ -33,7 +35,7 @@
 	</div>
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Créer' : 'Save'); ?>
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Créer' : 'Modifier'); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

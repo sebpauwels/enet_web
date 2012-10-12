@@ -43,6 +43,7 @@ class Etablissement extends CActiveRecord
 		return array(
 			array('nom_etablissement, adresse_etablissement, tel_etablissement', 'required'),
 			array('nom_etablissement, tel_etablissement', 'length', 'max'=>255),
+                        array('nom_etablissement', 'unique'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('id, nom_etablissement, adresse_etablissement, tel_etablissement', 'safe', 'on'=>'search'),
@@ -69,7 +70,7 @@ class Etablissement extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'nom_etablissement' => 'Nom de l`\'établissement',
+			'nom_etablissement' => 'Nom de l\'établissement',
 			'adresse_etablissement' => 'Adresse de l\'établissement',
 			'tel_etablissement' => 'Téléphone de l\'établissement',
 		);

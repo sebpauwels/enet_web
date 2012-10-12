@@ -25,7 +25,7 @@
     </div>
     
     <div class="infos-etab-right">
-        <p class="nbClasseEtab">il y a actuellement <?php echo CHtml::link(count(Classe::model()->findAll('etablissementId='.$data->id)),Yii::app()->request->baseUrl.'/index.php/classe/index/etablissementId/'.$data->id,array('class'=>'nbClasses')); ?> classe(s) renseignée(s) dans cet établissement</p>
+        <p class="nbClasseEtab">il y a actuellement <?php echo CHtml::link(count(Classe::model()->findAll('etablissementId='.$data->id)),Yii::app()->request->baseUrl.'/index.php/classe/admin/etablissementId/'.$data->id,array('class'=>'nbClasses')); ?> classe(s) renseignée(s) dans cet établissement</p>
     </div>
     
     <div class="clear"></div>

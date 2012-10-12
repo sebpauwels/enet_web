@@ -1,6 +1,6 @@
 <?php
 
-class EtablissementController extends Controller
+class EnseignantController extends Controller
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -62,16 +62,19 @@ class EtablissementController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new Etablissement;
+		$model=new Enseignant;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Etablissement']))
+		if(isset($_POST['Enseignant']))
 		{
-			$model->attributes=$_POST['Etablissement'];
+			$model->attributes=$_POST['Enseignant'];
 			if($model->save())
-				$this->redirect(array('admin'));
+                        {
+                                $model->generatePass($model->attributes);
+				$this->redirect(array('admin','id'=>$model->id));
+                        }
 		}
 
 		$this->render('create',array(
@@ -91,11 +94,11 @@ class EtablissementController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Etablissement']))
+		if(isset($_POST['Enseignant']))
 		{
-			$model->attributes=$_POST['Etablissement'];
+			$model->attributes=$_POST['Enseignant'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+				$this->redirect(array('admin','id'=>$model->id));
 		}
 
 		$this->render('update',array(
@@ -122,7 +125,7 @@ class EtablissementController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Etablissement');
+		$dataProvider=new CActiveDataProvider('Enseignant');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -133,10 +136,10 @@ class EtablissementController extends Controller
 	 */
 	public function actionAdmin()
 	{
-		$model=new Etablissement('search');
+		$model=new Enseignant('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Etablissement']))
-			$model->attributes=$_GET['Etablissement'];
+		if(isset($_GET['Enseignant']))
+			$model->attributes=$_GET['Enseignant'];
 
 		$this->render('admin',array(
 			'model'=>$model,
@@ -150,7 +153,7 @@ class EtablissementController extends Controller
 	 */
 	public function loadModel($id)
 	{
-		$model=Etablissement::model()->findByPk($id);
+		$model=Enseignant::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -162,7 +165,7 @@ class EtablissementController extends Controller
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='etablissement-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='enseignant-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();

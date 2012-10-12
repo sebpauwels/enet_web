@@ -12,7 +12,7 @@ $this->menu=array(
 	array('label'=>'Vos établissements', 'url'=>array('index')),
 	array('label'=>'Ajouter un établissement', 'url'=>array('create')),
 	//array('label'=>'View Etablissement', 'url'=>array('view', 'id'=>$model->id)),
-	array('label'=>'Gérer vos établissements', 'url'=>array('admin')),
+	array('label'=>'Gérer les établissements', 'url'=>array('admin')),
 );
 ?>
 

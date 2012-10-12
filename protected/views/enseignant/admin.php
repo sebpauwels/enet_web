@@ -2,13 +2,13 @@
 /* @var $this EnseignantController */
 /* @var $model Enseignant */
 
-$this->breadcrumbs=array(
-	'Enseignants'=>array('index'),
-	'Liste',
+$this->breadcrumbs = array(
+    'Enseignants' => array('index'),
+    'Liste',
 );
 
-$this->menu=array(
-	array('label'=>'Ajouter un enseignant', 'url'=>array('create')),
+$this->menu = array(
+    array('label' => 'Ajouter un enseignant', 'url' => array('create')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -28,20 +28,30 @@ $('.search-form form').submit(function(){
 <h1>Liste des enseignants</h1>
 
 <div class="search-form" style="display:none">
-<?php $this->renderPartial('_search',array(
-	'model'=>$model,
-)); ?>
+    <?php
+    $this->renderPartial('_search', array(
+        'model' => $model,
+    ));
+    ?>
 </div><!-- search-form -->
 
-<?php $this->widget('zii.widgets.grid.CGridView', array(
-	'id'=>'enseignant-grid',
-	'dataProvider'=>$model->search(),
-	'filter'=>$model,
-	'columns'=>array(
-		'nom_enseignant',
-		array(
-			'class'=>'CButtonColumn',
-                        'template'=>'{delete}{update}'
-		),
-	),
-)); ?>
+<?php
+$this->widget('zii.widgets.grid.CGridView', array(
+    'id' => 'enseignant-grid',
+    'dataProvider' => $model->search(),
+    'filter' => $model,
+    'columns' => array(
+        array(
+            'class'=>'CCheckBoxColumn',
+            'selectableRows'=>100
+        ),
+        'nom_enseignant',
+        array(
+            'class' => 'CButtonColumn',
+            'template' => '{delete}{update}'
+        ),
+    ),
+));
+?>
+
+<p id="spanInfoImprim">Pour la sélection : <?php echo CHtml::link("imprimer les feuillets d'accès (à remettre de préférence en main-propre)", "#") ?> </p>

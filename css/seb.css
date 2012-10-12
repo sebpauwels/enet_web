@@ -93,3 +93,24 @@ root {
 .puce {
     vertical-align: middle;
 }
+
+#enseignant-grid {
+   padding-bottom: 0;
+}
+
+#enseignant-grid table{
+   margin-bottom: 10px;
+}
+
+#formCheckAll {
+    margin-left: 25px;
+}
+
+#spanInfoImprim {
+    float: left;
+    color: #666666;
+    font-weight: bold;
+    padding-top: 25px;
+    width: 100%;
+    text-align: center;
+}

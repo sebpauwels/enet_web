@@ -47,10 +47,11 @@ return array(
         // uncomment the following to use a MySQL database
 
         'db' => array(
-            'connectionString' => 'mysql:host=localhost;dbname=enet_db',
+            //'connectionString' => 'mysql:host=localhost;dbname=enet_db',
+            'connectionString' => 'mysql:host=db2138.1and1.fr;dbname=db299890502',
             'emulatePrepare' => true,
-            'username' => 'root',
-            'password' => '',
+            'username' => 'dbo299890502',
+            'password' => 'pinkpink',
             'charset' => 'utf8',
             'enableParamLogging' => true,
             'enableProfiling' => true,

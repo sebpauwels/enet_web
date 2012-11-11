@@ -48,10 +48,10 @@ return array(
 
         'db' => array(
             //'connectionString' => 'mysql:host=localhost;dbname=enet_db',
-            'connectionString' => 'mysql:host=db2138.1and1.fr;dbname=db299890502',
+            'connectionString' => 'mysql:host=.1and1.fr;dbname=',
             'emulatePrepare' => true,
-            'username' => 'dbo299890502',
-            'password' => 'pinkpink',
+            'username' => '',
+            'password' => '',
             'charset' => 'utf8',
             'enableParamLogging' => true,
             'enableProfiling' => true,
